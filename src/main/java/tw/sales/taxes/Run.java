@@ -3,12 +3,12 @@ package tw.sales.taxes;
 import tw.sales.taxes.goods.Goods;
 import tw.sales.taxes.goods.GoodsType;
 import tw.sales.taxes.tax.TaxCalculate;
-import tw.sales.taxes.tax.TaxWithImported;
+import tw.sales.taxes.tax.TaxCaluclate4Import;
 
 public class Run {
 
 	public static void main(String[] args) {
-		TaxCalculate tc = new TaxWithImported();
+		TaxCalculate tc = new TaxCaluclate4Import();
 		ShoppingCart cartOne = new ShoppingCart();
 		Goods book = new Goods("book", GoodsType.BOOK, 12.49f, tc);
 		Goods musicCD = new Goods("music CD", GoodsType.MUSIC, 14.99f, tc);

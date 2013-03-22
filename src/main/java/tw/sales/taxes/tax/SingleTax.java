@@ -1,6 +1,6 @@
 package tw.sales.taxes.tax;
 
-import java.math.BigDecimal;
+import tw.sales.taxes.NumberUtil;
 
 /**
  * Single tax
@@ -22,11 +22,7 @@ public class SingleTax implements Tax {
 
 	@Override
 	public float getTax(float goodsPrice) {
-		return round(goodsPrice * rate);
+		return NumberUtil.round(goodsPrice * rate);
 	}
 
-	private float round(float num) {
-		return new BigDecimal((float) Math.ceil(num / 0.05f) * 0.05f).setScale(
-				2, BigDecimal.ROUND_HALF_UP).floatValue();
-	}
 }
