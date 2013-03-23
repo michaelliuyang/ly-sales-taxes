@@ -1,13 +1,16 @@
 package tw.sales.taxes.tax;
 
+import java.math.BigDecimal;
+
 /**
- * Tax interface
+ * Tax interface 
+ * You should implement it if you want to add a new tax.
  * 
  * @author liuyang
  * 
  */
 public interface Tax {
-
-	float getTax(float goodsPrice);
-
+	
+	BigDecimal getTax(BigDecimal goodsPrice);
+	
 }

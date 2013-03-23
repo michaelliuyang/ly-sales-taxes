@@ -1,9 +1,11 @@
 package tw.sales.taxes.goods;
 
+import java.math.BigDecimal;
+
 import tw.sales.taxes.tax.TaxCalculate;
 
 /**
- * goods model class
+ * Goods model class
  * 
  * @author liuyang
  * 
@@ -13,11 +15,19 @@ public class Goods {
 	private TaxCalculate taxCalculate;
 
 	private String name;
-	private float shelfPrice;
+	private BigDecimal shelfPrice;
 	private GoodsType goodsType;
 	private boolean isImported = false;
 
-	public Goods(String name, GoodsType goodsType, float shelfPrice,
+	/**
+	 * Constructor for not imported goods
+	 * 
+	 * @param name
+	 * @param goodsType
+	 * @param shelfPrice
+	 * @param taxCalculate
+	 */
+	public Goods(String name, GoodsType goodsType, BigDecimal shelfPrice,
 			TaxCalculate taxCalculate) {
 		this.name = name;
 		this.goodsType = goodsType;
@@ -25,7 +35,16 @@ public class Goods {
 		this.taxCalculate = taxCalculate;
 	}
 
-	public Goods(String name, GoodsType goodsType, float shelfPrice,
+	/**
+	 * Constructor for imported goods
+	 * 
+	 * @param name
+	 * @param goodsType
+	 * @param shelfPrice
+	 * @param isImported
+	 * @param taxCalculate
+	 */
+	public Goods(String name, GoodsType goodsType, BigDecimal shelfPrice,
 			boolean isImported, TaxCalculate taxCalculate) {
 		this.name = name;
 		this.goodsType = goodsType;
@@ -48,15 +67,15 @@ public class Goods {
 	}
 
 	/**
-	 * goods basic price
+	 * goods basic price without tax
 	 * 
 	 * @return
 	 */
-	public float getShelfPrice() {
+	public BigDecimal getShelfPrice() {
 		return shelfPrice;
 	}
 
-	public void setShelfPrice(float shelfPrice) {
+	public void setShelfPrice(BigDecimal shelfPrice) {
 		this.shelfPrice = shelfPrice;
 	}
 
@@ -74,7 +93,7 @@ public class Goods {
 	}
 
 	/**
-	 * is import goods or not
+	 * whether import goods or not
 	 * 
 	 * @return
 	 */
@@ -91,12 +110,12 @@ public class Goods {
 	 * 
 	 * @return
 	 */
-	public float getTax() {
+	public BigDecimal getTax() {
 		return this.taxCalculate.calculateTax(this);
 	}
 
-	public float getPriceWithTax() {
-		return this.getShelfPrice() + getTax();
+	public BigDecimal getTotalPrice() {
+		return this.getShelfPrice().add(getTax());
 	}
 
 }

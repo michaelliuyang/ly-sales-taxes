@@ -1,5 +1,7 @@
 package tw.sales.taxes.goods;
 
+import java.math.BigDecimal;
+
 /**
  * goods type enum
  * 
@@ -8,15 +10,16 @@ package tw.sales.taxes.goods;
  */
 public enum GoodsType {
 
-	BOOK(0f), FOOD(0f), MEDICAL(0f), PERFUME, MUSIC, OTHER;
+	BOOK(BigDecimal.ZERO), FOOD(BigDecimal.ZERO), 
+	MEDICAL(BigDecimal.ZERO), PERFUME, MUSIC, OTHER;
 
-	private float basicTaxRate;
+	private BigDecimal basicTaxRate;
 
 	private GoodsType() {
-		this.basicTaxRate = 0.1f;
+		this.basicTaxRate = new BigDecimal("0.1");
 	}
 
-	private GoodsType(float basicTaxRate) {
+	private GoodsType(BigDecimal basicTaxRate) {
 		this.basicTaxRate = basicTaxRate;
 	}
 
@@ -25,11 +28,11 @@ public enum GoodsType {
 	 * 
 	 * @return
 	 */
-	public float getBasicTaxRate() {
+	public BigDecimal getBasicTaxRate() {
 		return basicTaxRate;
 	}
 
-	public void setBasicTaxRate(float basicTaxRate) {
+	public void setBasicTaxRate(BigDecimal basicTaxRate) {
 		this.basicTaxRate = basicTaxRate;
 	}
 

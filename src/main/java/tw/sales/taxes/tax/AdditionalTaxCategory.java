@@ -1,20 +1,38 @@
 package tw.sales.taxes.tax;
 
+import java.math.BigDecimal;
+
+/**
+ * Additional tax category enum
+ * 
+ * @author liuyang
+ * 
+ */
 public enum AdditionalTaxCategory {
 
-	IMPORTED_TAX(0.05f);
+	IMPORTED_TAX(new BigDecimal("0.05"));
 
-	private float rate;
+	private BigDecimal rate;
 
-	private AdditionalTaxCategory(float rate) {
+	/**
+	 * private constructor
+	 * 
+	 * @param rate
+	 */
+	private AdditionalTaxCategory(BigDecimal rate) {
 		this.rate = rate;
 	}
 
-	public float getRate() {
+	/**
+	 * tax rate
+	 * 
+	 * @return
+	 */
+	public BigDecimal getRate() {
 		return rate;
 	}
 
-	public void setRate(float rate) {
+	public void setRate(BigDecimal rate) {
 		this.rate = rate;
 	}
 

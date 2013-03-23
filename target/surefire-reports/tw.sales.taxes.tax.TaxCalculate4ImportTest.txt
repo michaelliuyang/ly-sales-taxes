@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: tw.sales.taxes.goods.GoodsTest
+Test set: tw.sales.taxes.tax.TaxCalculate4ImportTest
 -------------------------------------------------------------------------------
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.106 sec
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec

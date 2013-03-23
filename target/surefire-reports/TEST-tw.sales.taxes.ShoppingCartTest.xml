@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.105" errors="0" skipped="0" tests="8" name="tw.sales.taxes.goods.GoodsTest">
+<testsuite failures="0" time="0.006" errors="0" skipped="0" tests="7" name="tw.sales.taxes.ShoppingCartTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries"/>
@@ -64,12 +64,11 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.006" classname="tw.sales.taxes.goods.GoodsTest" name="it_get_tax_with_zero_tax_should_equals_zero"/>
-  <testcase time="0" classname="tw.sales.taxes.goods.GoodsTest" name="it_get_tax_with_basic_tax_should_be_right"/>
-  <testcase time="0.001" classname="tw.sales.taxes.goods.GoodsTest" name="it_get_tax_with_basic_and_imported_tax_should_be_right"/>
-  <testcase time="0" classname="tw.sales.taxes.goods.GoodsTest" name="it_get_tax_with_zero_price_should_equal_zero"/>
-  <testcase time="0" classname="tw.sales.taxes.goods.GoodsTest" name="it_get_total_price_with_zero_tax_should_equal_shelf_price"/>
-  <testcase time="0" classname="tw.sales.taxes.goods.GoodsTest" name="it_get_total_price_with_basic_tax_should_be_right"/>
-  <testcase time="0.001" classname="tw.sales.taxes.goods.GoodsTest" name="it_get_total_price_with_basic_and_imported_tax_should_be_right"/>
-  <testcase time="0" classname="tw.sales.taxes.goods.GoodsTest" name="it_get_total_price_with_zero_price_should_equal_zero"/>
+  <testcase time="0" classname="tw.sales.taxes.ShoppingCartTest" name="it_get_total_taxes_with_empty_should_be_zero"/>
+  <testcase time="0" classname="tw.sales.taxes.ShoppingCartTest" name="it_get_total_taxes_should_be_right"/>
+  <testcase time="0" classname="tw.sales.taxes.ShoppingCartTest" name="it_get_total_price_with_empty_should_be_zero"/>
+  <testcase time="0" classname="tw.sales.taxes.ShoppingCartTest" name="it_get_total_price_should_be_right"/>
+  <testcase time="0" classname="tw.sales.taxes.ShoppingCartTest" name="it_count_with_empty_should_equal_zero"/>
+  <testcase time="0" classname="tw.sales.taxes.ShoppingCartTest" name="it_count_should_be_right"/>
+  <testcase time="0" classname="tw.sales.taxes.ShoppingCartTest" name="it_add_goods_should_be_right"/>
 </testsuite>
