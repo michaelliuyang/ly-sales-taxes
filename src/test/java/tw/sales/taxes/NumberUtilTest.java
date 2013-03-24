@@ -1,4 +1,4 @@
-package tw.sales.taxes.goods;
+package tw.sales.taxes;
 
 import java.math.BigDecimal;
 

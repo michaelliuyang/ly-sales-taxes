@@ -9,32 +9,33 @@ import tw.sales.taxes.tax.TaxCalculate4Import;
 
 public class Run {
 
+	private static TaxCalculate tc = new TaxCalculate4Import();
+
 	public static void main(String[] args) {
-		TaxCalculate tc = new TaxCalculate4Import();
-		ShoppingCart cartOne = new ShoppingCart();
+		inputOne();
+		inputTwo();
+		inputThree();
+	}
+
+	private static void inputOne() {
 		Goods book = new Goods("book", GoodsType.BOOK, new BigDecimal("12.49"),
 				tc);
 		Goods musicCD = new Goods("music CD", GoodsType.MUSIC, new BigDecimal(
 				"14.99"), tc);
 		Goods chocolateBar = new Goods("chocolate bar", GoodsType.FOOD,
 				new BigDecimal("0.85"), tc);
-		cartOne.addGoods(book);
-		cartOne.addGoods(musicCD);
-		cartOne.addGoods(chocolateBar);
-		Receipt receipt = new SmallShopReceipt(cartOne);
-		receipt.print();
+		settleAccounts(book, musicCD, chocolateBar);
+	}
 
-		ShoppingCart cartTwo = new ShoppingCart();
+	private static void inputTwo() {
 		Goods importedChocolate = new Goods("imported chocolate",
 				GoodsType.FOOD, new BigDecimal("10"), true, tc);
 		Goods importedPerfume = new Goods("imported perfume",
 				GoodsType.PERFUME, new BigDecimal("47.5"), true, tc);
-		cartTwo.addGoods(importedChocolate);
-		cartTwo.addGoods(importedPerfume);
-		receipt.setCart(cartTwo);
-		receipt.print();
+		settleAccounts(importedChocolate, importedPerfume);
+	}
 
-		ShoppingCart cartThree = new ShoppingCart();
+	private static void inputThree() {
 		Goods importedPerfumeAnother = new Goods("imported perfume",
 				GoodsType.PERFUME, new BigDecimal("27.99"), true, tc);
 		Goods perfume = new Goods("perfume", GoodsType.PERFUME, new BigDecimal(
@@ -43,11 +44,18 @@ public class Run {
 				new BigDecimal("9.75"), tc);
 		Goods importedChocolateAnother = new Goods("chocolate", GoodsType.FOOD,
 				new BigDecimal("11.25"), true, tc);
-		cartThree.addGoods(importedPerfumeAnother);
-		cartThree.addGoods(perfume);
-		cartThree.addGoods(headachePills);
-		cartThree.addGoods(importedChocolateAnother);
-		receipt.setCart(cartThree);
+		settleAccounts(importedPerfumeAnother, perfume, headachePills,
+				importedChocolateAnother);
+	}
+
+	private static void settleAccounts(Goods... goods) {
+		if (goods == null)
+			return;
+		ShoppingCart cart = new ShoppingCart();
+		for (Goods g : goods) {
+			cart.addGoods(g);
+		}
+		Receipt receipt = new SmallShopReceipt(cart);
 		receipt.print();
 	}
 
