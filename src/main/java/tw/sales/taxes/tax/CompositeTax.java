@@ -5,8 +5,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Composite tax: implements interface tax 
- * This is a tax which may be has one tax or some taxes, it is a tax list.
+ * Composite tax Implements interface tax ,this is a tax which may be has one
+ * tax or some taxes.
  * 
  * @author liuyang
  * 
@@ -15,6 +15,9 @@ public class CompositeTax implements Tax {
 
 	private List<Tax> taxList;
 
+	/**
+	 * Constructor
+	 */
 	public CompositeTax() {
 		taxList = new LinkedList<Tax>();
 	}

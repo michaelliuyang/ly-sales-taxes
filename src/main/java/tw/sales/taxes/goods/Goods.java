@@ -93,7 +93,7 @@ public class Goods {
 	}
 
 	/**
-	 * whether import goods or not
+	 * whether import goods
 	 * 
 	 * @return
 	 */
@@ -105,11 +105,6 @@ public class Goods {
 		this.isImported = isImported;
 	}
 
-	/**
-	 * goods tax
-	 * 
-	 * @return
-	 */
 	public BigDecimal getTax() {
 		return this.taxCalculate.calculateTax(this);
 	}

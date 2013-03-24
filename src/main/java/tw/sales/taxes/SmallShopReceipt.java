@@ -24,7 +24,7 @@ public class SmallShopReceipt extends Receipt {
 			System.out.println("1 " + goods.getName() + ":"
 					+ goods.getTotalPrice());
 		}
-		System.out.println("Sales Taxes:" + this.cart.totalTaxes());
+		System.out.println("Sales Taxes:" + this.cart.totalTax());
 		System.out.println("Total:" + this.cart.totalPrice());
 		System.out.println("---------------------------------");
 	}

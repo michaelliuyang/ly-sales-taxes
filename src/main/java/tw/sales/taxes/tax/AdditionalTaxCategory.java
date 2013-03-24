@@ -15,7 +15,7 @@ public enum AdditionalTaxCategory {
 	private BigDecimal rate;
 
 	/**
-	 * private constructor
+	 * Constructor
 	 * 
 	 * @param rate
 	 */

@@ -11,14 +11,14 @@ import tw.sales.taxes.goods.GoodsType;
 
 public class TaxCalculate4ImportTest {
 
-	private TaxCaluclate4Import taxCaluclate4Import;
+	private TaxCalculate4Import taxCaluclate4Import;
 	private Goods goods;
 	private BigDecimal goodsPrice;
 
 	@Before
 	public void setUp() {
 		goodsPrice = new BigDecimal("12.59");
-		taxCaluclate4Import = new TaxCaluclate4Import();
+		taxCaluclate4Import = new TaxCalculate4Import();
 	}
 
 	@Test

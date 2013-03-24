@@ -15,7 +15,8 @@ public class SingleTax implements Tax {
 	private BigDecimal rate;
 
 	/**
-	 * Constructor Create a custom tax object which has custom rate
+	 * Constructor c
+	 * create a tax object which has custom rate
 	 * 
 	 * @param rate
 	 */

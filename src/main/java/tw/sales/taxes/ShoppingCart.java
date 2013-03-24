@@ -57,7 +57,7 @@ public class ShoppingCart {
 	 * 
 	 * @return
 	 */
-	public BigDecimal totalTaxes() {
+	public BigDecimal totalTax() {
 		BigDecimal totalTaxes = new BigDecimal("0.00");
 		for (Goods goods : this.goodsList) {
 			totalTaxes = totalTaxes.add(goods.getTax());

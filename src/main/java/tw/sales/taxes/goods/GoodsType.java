@@ -10,21 +10,28 @@ import java.math.BigDecimal;
  */
 public enum GoodsType {
 
-	BOOK(BigDecimal.ZERO), FOOD(BigDecimal.ZERO), 
-	MEDICAL(BigDecimal.ZERO), PERFUME, MUSIC, OTHER;
+	BOOK(BigDecimal.ZERO), FOOD(BigDecimal.ZERO), MEDICAL(BigDecimal.ZERO), PERFUME, MUSIC, OTHER;
 
 	private BigDecimal basicTaxRate;
 
+	/**
+	 * Constructor for default rate
+	 */
 	private GoodsType() {
 		this.basicTaxRate = new BigDecimal("0.1");
 	}
 
+	/**
+	 * Constructor
+	 * 
+	 * @param basicTaxRate
+	 */
 	private GoodsType(BigDecimal basicTaxRate) {
 		this.basicTaxRate = basicTaxRate;
 	}
 
 	/**
-	 * type's tax rate
+	 * type's basic tax rate
 	 * 
 	 * @return
 	 */

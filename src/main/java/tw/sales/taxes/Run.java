@@ -5,12 +5,12 @@ import java.math.BigDecimal;
 import tw.sales.taxes.goods.Goods;
 import tw.sales.taxes.goods.GoodsType;
 import tw.sales.taxes.tax.TaxCalculate;
-import tw.sales.taxes.tax.TaxCaluclate4Import;
+import tw.sales.taxes.tax.TaxCalculate4Import;
 
 public class Run {
 
 	public static void main(String[] args) {
-		TaxCalculate tc = new TaxCaluclate4Import();
+		TaxCalculate tc = new TaxCalculate4Import();
 		ShoppingCart cartOne = new ShoppingCart();
 		Goods book = new Goods("book", GoodsType.BOOK, new BigDecimal("12.49"),
 				tc);

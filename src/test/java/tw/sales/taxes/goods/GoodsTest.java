@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import tw.sales.taxes.tax.TaxCalculate;
-import tw.sales.taxes.tax.TaxCaluclate4Import;
+import tw.sales.taxes.tax.TaxCalculate4Import;
 
 public class GoodsTest {
 
@@ -19,7 +19,7 @@ public class GoodsTest {
 	@Before
 	public void setUp() {
 		goodsPrice = new BigDecimal("12.50");
-		taxCaluclate4Import = new TaxCaluclate4Import();
+		taxCaluclate4Import = new TaxCalculate4Import();
 	}
 
 	@Test

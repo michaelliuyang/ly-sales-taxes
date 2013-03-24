@@ -10,7 +10,7 @@ import tw.sales.taxes.goods.Goods;
  * @author liuyang
  * 
  */
-public class TaxCaluclate4Import implements TaxCalculate {
+public class TaxCalculate4Import implements TaxCalculate {
 
 	@Override
 	public BigDecimal calculateTax(Goods goods) {
